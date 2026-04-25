@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SVG Landing</title>
+
+<style>
+  body {
+    margin: 0;
+    background: #FFFFFF;
+  }
+
+  /* ===== DESKTOP WRAPPER ===== */
+  .desktop-wrapper {
+    width: 100vw;
+    height: 200vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: top;
+
+    /* 👇 отступы в процентах */
+    padding-left: 9vw;
+    padding-right: 9vw;
+    box-sizing: border-box;
+  }
+
+  .desktop-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* НЕ растягивает */
+    display: block;
+  }
+
+  /* ===== MOBILE WRAPPER ===== */
+  .mobile-wrapper {
+    display: none;
+  }
+
+  /* ===== SWITCH ===== */
+  @media (max-width: 768px) {
+    .desktop-wrapper {
+      display: none;
+    }
+
+    .mobile-wrapper {
+      display: block;
+      width: 100vw;
+      min-height: 100vh;
+    }
+
+    .mobile-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ================= DESKTOP ================= -->
+<div class="desktop-wrapper">
+  <img src="desktop.svg" alt="desktop landing">
+</div>
+
+<!-- ================= MOBILE ================= -->
+<div class="mobile-wrapper">
+  <img src="mobile.svg" alt="mobile landing">
+</div>
+
+</body>
+</html>
